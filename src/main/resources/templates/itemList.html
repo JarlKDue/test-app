@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Item List</title>
+        <link rel="stylesheet" th:href="@{/style.css}"><link>
+    </head>
+
+    <body>
+    <h2>Your Item List</h2>
+    <div th:unless="${#lists.isEmpty(items)}">
+        <d1 th:each="item: ${items}">
+            <dt class="item">
+                <span th:text="${item.key}">ID</span>
+                <span th:text="${item.name}">First Name</span>
+                <span th:text="${item.lastName}">Last Name</span>
+            </dt>
+        </d1>
+    </div>
+    <div th:if="${#lists.isEmpty(items)}">
+        <p>There are no people added yet</p>
+    </div>
+
+    <hr/>
+    <h3>Add Person</h3>
+    <form th:action="@{/add}" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name = "name" size ="50"><br/>
+        <label for="lastName">Last Name</label>
+        <input type="text" name = "lastName" size ="50"><br/>
+        <input type="submit"></input>
+    </form>
+
+    <h3>Update Person</h3>
+    <form th:action="@{/update}" method="POST">
+        <label for="key">Key</label>
+        <input type="text" name = "key" size ="50"><br/>
+        <label for="name">Name</label>
+        <input type="text" name = "name" size ="50"><br/>
+        <label for="lastName">Last Name</label>
+        <input type="text" name = "lastName" size ="50"><br/>
+        <input type="submit">
+    </form>
+    </body>
+</html>
