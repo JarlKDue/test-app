@@ -7,16 +7,20 @@ pipeline {
         stage('Fetch') {
             steps {
                 echo 'Building..'
+                git clone  'https://JarlKDue:Right55HDuke@github.com/JarlKDue/test-app.git'
             }
         }
         stage('Build and Test') {
             steps {
                 echo 'Testing..'
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh "mvn deploy"
+
             }
         }
     }
