@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Item List</title>
+        <title>People List</title>
         <link rel="stylesheet" th:href="@{/style.css}"><link>
     </head>
 
@@ -16,7 +16,7 @@
         </d1>
     </div>
     <div th:if="${#lists.isEmpty(items)}">
-        <p>There are no people added yet</p>
+        <p>You have not added any people yet</p>
     </div>
 
     <hr/>
