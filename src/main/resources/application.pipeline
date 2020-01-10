@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    tools {
+        maven 'apache-maven'
+    }
+    stages {
+        stage('Fetch') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Build and Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
