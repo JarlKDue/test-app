@@ -7,6 +7,12 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh 'bat mvn clean install'
+      }
+    }
+
   }
   environment {
     git_branch = 'master'
